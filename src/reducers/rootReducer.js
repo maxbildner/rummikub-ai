@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 import players from './playersReducer';
-import currentPlayer from './currentPlayerReducer';
 
 
 const rootReducer = combineReducers({
-  players,
-  currentPlayer,
+  players
 });
 
 export default rootReducer;
@@ -16,6 +14,7 @@ export default rootReducer;
 //    players: {
 //      player1: { 10, 11, ... }    SET (nums refer to tile IDs)
 //      ai:      { 13, 14, ... }    SET
+//      currentPlayer: 'player1'    STRING (also can be null or 'ai')
 //    },
 //
 //    board: {
@@ -28,12 +27,12 @@ export default rootReducer;
 //      },
 //    },
 //
+//    pouch: { 55, 52, ... }        SET (nums refer to tile IDs)
+//
 //    boughtIn: {
 //      player1: false,             BOOLEAN
 //      ai: false,                  BOOLEAN
 //    },
-//    
-//    currentPlayer: 'player1'      STRING (also can be null or 'ai'),
 //    
 //    timeRemaining:                DATEOBJ
 //

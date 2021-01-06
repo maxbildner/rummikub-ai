@@ -57,3 +57,110 @@ body {
   Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+.App {
+  background: #c1c1c1;
+  width: 60rem;
+  margin: 0 auto;
+}
+
+.header-wrap {
+  background: lightblue;
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.header-left {
+
+}
+
+.header-right {
+
+}
+
+.header-right a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+  color: grey;
+}
+
+.main-wrap {
+  background: lightgrey;
+  height: 36rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+
+.sidebarleft-wrap {
+  background: lightgreen;
+  width: 8rem;
+}
+
+
+/* MAIN MIDDLE COMPONENT ***************/
+.mainmiddle-wrap {
+  background: lightyellow;
+  width: 41rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* BOARD */
+.board-wrap {
+  background: lightblue;
+  height: 60%;
+  display: flex;
+  justify-content: space-between; 
+  flex-direction: column;
+}
+
+.board-row {
+  display: flex;
+  justify-content: space-between; 
+  height: 100%;
+}
+
+.tile-wrap {
+  border: 1px solid #80808024;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* RACK */
+.rack-wrap {
+  background: pink;
+  height: 40%;
+}
+/***************************************/
+
+
+.sidebarright-wrap {
+  background: lightcoral;
+  width: 8rem;
+}
+
+
+/* WELCOME COMPONENT *******************/
+.welcome-wrap {
+  padding-top: 14rem;
+  text-align: center;
+}
+
+.welcome-wrap div,
+.welcome-wrap button {
+  margin-top: 2rem;
+}
+
+.welcome-wrap button:hover {
+  cursor: pointer;
+}
+/****************************************/
