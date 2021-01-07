@@ -5,7 +5,11 @@ function Header() {
         RUMMIKUB 2Player
       </div>
       <div className="header-right">
-        <a href="https://github.com/maxbildner/rummikub-ai" target="_blank">GIT REPO</a>
+        <a 
+          href="https://github.com/maxbildner/rummikub-ai" 
+          target="_blank"
+          rel="noreferrer"
+        >GIT REPO</a>
       </div>
     </div>
   );

@@ -3,15 +3,20 @@ import Welcome from './welcome';
 import { connect } from 'react-redux';
 import { 
   updateCurrentPlayer,
-  updatePlayerRack
+  updatePlayerRack,
+  removeTilesFromPouch
 } from '../actions/userActions';
+import {
+  selectRandomTilesFromPouch
+} from '../util/util';
 import Board from './board';
 import Rack from './rack';
 
 
 const mapStateToProps = state => {
   return ({
-    currentPlayer: state.players.currentPlayer
+    currentPlayer: state.players.currentPlayer,
+    pouch: state.pouch
   });
 };
 
@@ -19,7 +24,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return({
     updateCurrentPlayer: (name) => dispatch(updateCurrentPlayer(name)),
-    updatePlayerRack: (quantity, name) => dispatch(updatePlayerRack(quantity, name))
+    updatePlayerRack: (quantity, name) => dispatch(updatePlayerRack(quantity, name)),
+    removeTilesFromPouch: (tiles) => dispatch(removeTilesFromPouch(tiles))
   });
 };
 
@@ -31,12 +37,29 @@ class MainMiddle extends React.Component {
 
 
   handleClickPlay = () => {
-    const { updateCurrentPlayer } = this.props;
+    const { 
+      updateCurrentPlayer, 
+      pouch,
+      removeTilesFromPouch
+    } = this.props;
+
     updateCurrentPlayer('Player1');
 
-    // draw 21 tiles from pouch to Player1
-    updatePlayerRack(21, 'Player1');
+    // copy pouch so we don't accidently mutate it directly
+    let newPouch = new Set(pouch);
+
+    // randomly select 14 tiles from pouch
+    let tilesToRemove = selectRandomTilesFromPouch(newPouch, 14);
+    // tilesToRemove == [77, 42, 45, 17, 84, 61, 27, 36, 39, 96, 26, 55, 56, 40]
+
+    // update redux store
+    removeTilesFromPouch(tilesToRemove);
+    
+    // replace rack in Player1 w/ newTiles array
+    // updatePlayerRack(newTiles, 'Player1');
   }
+
+
 
 
   renderGame = ()=> {
