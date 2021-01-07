@@ -35,3 +35,17 @@ export function selectRandomTilesFromPouch(pouch, numTiles) {
 
   return tilesDrawn;
 }
+
+
+
+// DEEP COPY 2D ARRAY
+// [ [null, null], [1, 2] ] => [ [null, null], [1, 2] ]
+export function deepCopy2DArr(arr) {
+  let newArr = [];
+
+  arr.forEach((row, idx) => {
+    newArr.push(row.slice());
+  });
+
+  return newArr;
+}

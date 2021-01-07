@@ -8,9 +8,13 @@ import {
 // EXAMPLE REDUX STORE
 // {
 //    players: {
-//      player1: [ 10, 11, ... ]    ARRAY (idx's refer to position on rack, nums refer to tileIds)
-//      ai:      { 13, 14, ... }    SET (no rack, no need to maintain order)
-//      currentPlayer: 'player1'    STRING (also can be null or 'ai')
+//      player1: [                  ARRAY (idx's refer to position on rack, nums refer to tileIds)
+//       [ null, null, null, ...],  
+//       [ 1,    2,    3,    ...], 
+//       [ null, null, null, ...], 
+//      ],    
+//      ai:      { 13, 14, ... },   SET (no rack, no need to maintain order)
+//      currentPlayer: 'player1',   STRING (also can be null or 'ai')
 //    },
 //
 //    board: {
@@ -37,7 +41,11 @@ import {
 
 // prepopulated players slice of store
 const predefinedState = {
-  player1: [],
+  player1: [
+    [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ],
+    [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  ],
   ai: new Set(),
   currentPlayer: null
 };
@@ -62,6 +70,7 @@ const players=(oldState=predefinedState, action) => {
       // action.name == 'Player1'
       // action.newRack == [ 1, null, 3, 10, ... ]  idx's refer to position on rack
 
+      // replace player rack array w/ new Rack
       newState = Object.assign({}, oldState, {
         [action.name]: action.newRack
       });

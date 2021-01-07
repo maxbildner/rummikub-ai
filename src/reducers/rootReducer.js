@@ -14,9 +14,13 @@ export default rootReducer;
 // EXAMPLE REDUX STORE
 // {
 //    players: {
-//      player1: [ 10, 11, ... ]    ARRAY (idx's refer to position on rack, nums refer to tileIds)
-//      ai:      { 13, 14, ... }    SET (no rack, no need to maintain order)
-//      currentPlayer: 'player1'    STRING (also can be null or 'ai')
+//      player1: [                  ARRAY (idx's refer to position on rack, nums refer to tileIds)
+//       [ null, null, null, ...],  
+//       [ 1,    2,    3,    ...], 
+//       [ null, null, null, ...], 
+//      ],    
+//      ai:      { 13, 14, ... },   SET (no rack, no need to maintain order)
+//      currentPlayer: 'player1',   STRING (also can be null or 'ai')
 //    },
 //
 //    board: {
