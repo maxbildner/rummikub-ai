@@ -1,12 +1,15 @@
 // import { merge } from 'lodash';
-import { UPDATE_CURRENT_PLAYER } from '../actions/userActions';
+import { 
+  UPDATE_CURRENT_PLAYER,
+  UPDATE_PLAYER_RACK
+} from '../actions/userActions';
 
 
 // EXAMPLE REDUX STORE
 // {
 //    players: {
-//      player1: { 10, 11, ... }    SET (nums refer to tile IDs)
-//      ai:      { 13, 14, ... }    SET
+//      player1: [ 10, 11, ... ]    ARRAY (idx's refer to position on rack, nums refer to tileIds)
+//      ai:      { 13, 14, ... }    SET (no rack, no need to maintain order)
 //      currentPlayer: 'player1'    STRING (also can be null or 'ai')
 //    },
 //
@@ -34,7 +37,7 @@ import { UPDATE_CURRENT_PLAYER } from '../actions/userActions';
 
 // prepopulated players slice of store
 const predefinedState = {
-  player1: new Set(),
+  player1: [],
   ai: new Set(),
   currentPlayer: null
 };
@@ -51,6 +54,16 @@ const players=(oldState=predefinedState, action) => {
     case UPDATE_CURRENT_PLAYER:
       newState = Object.assign({}, oldState, {
         currentPlayer: action.name
+      });
+
+      return newState;
+
+    case UPDATE_PLAYER_RACK:
+      // action.name == 'Player1'
+      // action.newRack == [ 1, null, 3, 10, ... ]  idx's refer to position on rack
+
+      newState = Object.assign({}, oldState, {
+        [action.name]: action.newRack
       });
 
       return newState;

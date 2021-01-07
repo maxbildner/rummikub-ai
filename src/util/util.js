@@ -6,7 +6,7 @@ export function getRandomInt(max) {
 }
 
 
-// RETURNS ARRAY OF TILE NUMS FROM POUCH
+// RETURNS ARRAY OF TILE NUMS FROM POUCH (non-mutative of inputs)
 // pouch == SET { 1, 2, ... 106 }
 // numTiles == 14
 // return ex. => [ 1, 2 ]       // nums refer to tileIDs
@@ -19,7 +19,6 @@ export function selectRandomTilesFromPouch(pouch, numTiles) {
   // select random tile from pouch numTiles times
   while (tilesDrawn.length < numTiles) {
 
-    // select random num from pouchArr
     // select random idx in pouchArr
     let randomIdx = getRandomInt(pouchArr.length - 1);
   

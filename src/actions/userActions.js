@@ -15,11 +15,11 @@ export const updateCurrentPlayer = (name) => {
 }
 
 
-export const updatePlayerRack = (newTiles, name) => {
+export const updatePlayerRack = (newRack, name) => {
 
   return ({
     type: UPDATE_PLAYER_RACK,
-    newTiles,
+    newRack,
     name
   });
 }

@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return({
     updateCurrentPlayer: (name) => dispatch(updateCurrentPlayer(name)),
-    updatePlayerRack: (quantity, name) => dispatch(updatePlayerRack(quantity, name)),
+    updatePlayerRack: (newRack, name) => dispatch(updatePlayerRack(newRack, name)),
     removeTilesFromPouch: (tiles) => dispatch(removeTilesFromPouch(tiles))
   });
 };
@@ -38,12 +38,10 @@ class MainMiddle extends React.Component {
 
   handleClickPlay = () => {
     const { 
-      updateCurrentPlayer, 
-      pouch,
-      removeTilesFromPouch
+      pouch, updateCurrentPlayer, removeTilesFromPouch, updatePlayerRack
     } = this.props;
 
-    updateCurrentPlayer('Player1');
+    updateCurrentPlayer('player1');
 
     // copy pouch so we don't accidently mutate it directly
     let newPouch = new Set(pouch);
@@ -55,8 +53,10 @@ class MainMiddle extends React.Component {
     // update redux store
     removeTilesFromPouch(tilesToRemove);
     
+    let newRack = ['test'];
+    
     // replace rack in Player1 w/ newTiles array
-    // updatePlayerRack(newTiles, 'Player1');
+    updatePlayerRack(newRack, 'player1');
   }
 
 
