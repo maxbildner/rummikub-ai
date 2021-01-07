@@ -12,12 +12,13 @@ function Board() {
     [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
   ];
 
+  // generate 6 rows
   let rows = grid.map((row, idx) => {
-    let rowTiles = row.map((tiles, i) => {
+
+    // each row will contain 16 tiles
+    var rowTiles = row.map((tiles, i) => {
       return (
-        <>
-          <Tile index={(i + 1) * 100}/>
-        </>
+        <Tile key={(idx + 1) + i} className="tile-wrap"/>
       );
     });
 

@@ -117,10 +117,11 @@ body {
 /* BOARD */
 .board-wrap {
   background: lightblue;
-  height: 60%;
+  height: 65%;
   display: flex;
   justify-content: space-between; 
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .board-row {
@@ -138,7 +139,15 @@ body {
 /* RACK */
 .rack-wrap {
   background: pink;
-  height: 40%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rack-row {
+  display: flex;
+  height: 100%;
 }
 /***************************************/
 
