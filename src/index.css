@@ -130,11 +130,19 @@ body {
   height: 100%;
 }
 
+
+/* TILE */
 .tile-wrap {
   border: 1px solid #80808024;
   box-sizing: border-box;
   width: 100%;
 }
+
+.tile-wrap.BLACK { color: black; }
+.tile-wrap.RED { color: red; }
+.tile-wrap.GREEN { color: green; }
+.tile-wrap.BLUE { color: blue; }
+
 
 /* RACK */
 .rack-wrap {
