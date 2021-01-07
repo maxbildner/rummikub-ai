@@ -1,7 +1,10 @@
 import React from 'react';
 import Welcome from './welcome';
 import { connect } from 'react-redux';
-import { updateCurrentPlayer } from '../actions/userActions';
+import { 
+  updateCurrentPlayer,
+  updatePlayerRack
+} from '../actions/userActions';
 import Board from './board';
 import Rack from './rack';
 
@@ -15,7 +18,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return({
-    updateCurrentPlayer: (name) => dispatch(updateCurrentPlayer(name))
+    updateCurrentPlayer: (name) => dispatch(updateCurrentPlayer(name)),
+    updatePlayerRack: (quantity, name) => dispatch(updatePlayerRack(quantity, name))
   });
 };
 
@@ -29,6 +33,9 @@ class MainMiddle extends React.Component {
   handleClickPlay = () => {
     const { updateCurrentPlayer } = this.props;
     updateCurrentPlayer('Player1');
+
+    // draw 21 tiles from pouch to Player1
+    updatePlayerRack(21, 'Player1');
   }
 
 

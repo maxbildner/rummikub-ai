@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import players from './playersReducer';
+import pouch from './pouchReducer';
 
 
 const rootReducer = combineReducers({
-  players
+  players,
+  pouch
 });
 
 export default rootReducer;
