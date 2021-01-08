@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/rummikub-ai/static/css/main.8a20c129.chunk.css",
+    "main.js": "/rummikub-ai/static/js/main.e9d342ec.chunk.js",
+    "main.js.map": "/rummikub-ai/static/js/main.e9d342ec.chunk.js.map",
+    "runtime-main.js": "/rummikub-ai/static/js/runtime-main.65c286c9.js",
+    "runtime-main.js.map": "/rummikub-ai/static/js/runtime-main.65c286c9.js.map",
+    "static/js/2.097a5dd9.chunk.js": "/rummikub-ai/static/js/2.097a5dd9.chunk.js",
+    "static/js/2.097a5dd9.chunk.js.map": "/rummikub-ai/static/js/2.097a5dd9.chunk.js.map",
+    "index.html": "/rummikub-ai/index.html",
+    "static/css/main.8a20c129.chunk.css.map": "/rummikub-ai/static/css/main.8a20c129.chunk.css.map",
+    "static/js/2.097a5dd9.chunk.js.LICENSE.txt": "/rummikub-ai/static/js/2.097a5dd9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65c286c9.js",
+    "static/js/2.097a5dd9.chunk.js",
+    "static/css/main.8a20c129.chunk.css",
+    "static/js/main.e9d342ec.chunk.js"
+  ]
+}
