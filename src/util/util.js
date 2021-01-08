@@ -65,17 +65,40 @@ export function moveTileOnRack(oldPlayerRack, draggedTile, droppedTile) {
     
     // update dropped tile location w/ dragged tile id
     newPlayerRack[droppedTile.row][droppedTile.col] = draggedTile.tileId;
-
+    
     // dropping on location w/ tile, so move tiles
   } else {
-
+    
     // grab tiles from dropped location to end of row (null)
     let tilesToShift = oldPlayerRack[droppedTile.row].slice(droppedTile.col);
     
+    // remove nulls at end
+    tilesToShift = tilesToShift.filter(tile => tile !== null);
+    
+    debugger
 
+    // update dropped tile location w/ dragged tile id
+    newPlayerRack[droppedTile.row][droppedTile.col] = draggedTile.tileId;
+    
+    debugger
 
+    // number of tiles from dropped (exclusive) to end / null
+    let numTimesToLoop = droppedTile.col + tilesToShift.length + 1;
 
+    let j = 0;
 
+    // loop from dropped tile's idx + 1 number of times == tilesToShift
+    for (let i = droppedTile.col + 1; i < numTimesToLoop; i++ ) {
+      
+      debugger
+      // update dropped tile location w/ dragged tile id
+      newPlayerRack[droppedTile.row][i] = tilesToShift[j];
+
+      j++;
+      debugger
+    }
+
+    debugger
   }
 
 

@@ -60,7 +60,7 @@ function Tile(props) {
         // dropped tile info
         let droppedTile = { row: rowIdx, col: colIdx, tileId: tileId };
 
-        // move tile
+        // move tile, update rack
         let newPlayerRack = moveTileOnRack(playerRack, draggedTile, droppedTile);
 
         // update redux store

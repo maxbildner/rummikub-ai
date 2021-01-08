@@ -51,7 +51,7 @@ class MainMiddle extends React.Component {
     let newPouch = new Set(pouch);
 
     // randomly select 14 tiles from pouch
-    let tilesDrawn = selectRandomTilesFromPouch(newPouch, 14);
+    let tilesDrawn = selectRandomTilesFromPouch(newPouch, 16);
     // tilesDrawn == [77, 42, 45, 17, 84, 61, 27, 36, 39, 96, 26, 55, 56, 40]
 
     // update redux store
