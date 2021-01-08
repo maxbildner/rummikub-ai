@@ -1,10 +1,9 @@
-import Tile from './tile';
+import TileContainer from './tile';
+import React from 'react';
 
 
 function Rack(props) {
 
-  // lazy initialization to prevent undefined error
-  // const { player1Rack } = props || [[]];    
   const { player1Rack } = props;    
 
   // player1Rack 3 x 16 == 
@@ -15,16 +14,19 @@ function Rack(props) {
   // ];
 
   // generate 3 rows
-  let rows = player1Rack.map((row, idx) => {
+  let rows = player1Rack.map((row, rowIdx) => {
     
     // each row will contain 16 tiles
-    var rowTiles = row.map((tileId, i) => {
+    var rowTiles = row.map((tileId, colIdx) => {
       
       return (
-        <Tile 
-          key={(idx + 1) + i} 
+        <TileContainer
+          key={(rowIdx + 1) + colIdx} 
           className="rack-tile-wrap" 
           tileId={tileId}
+          rowIdx={rowIdx}
+          colIdx={colIdx}
+          playerRack={player1Rack}
         />
       );
     });
@@ -32,7 +34,7 @@ function Rack(props) {
     return (
       <div
         className="rack-row"
-        key={idx}
+        key={rowIdx}
       >
         {rowTiles}
       </div>

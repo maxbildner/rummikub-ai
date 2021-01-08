@@ -136,12 +136,27 @@ body {
   border: 1px solid #80808024;
   box-sizing: border-box;
   width: 100%;
+  -webkit-user-select: none;  /* Safari */        
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE10+/Edge */
+  user-select: none;          /* Standard */
+  font-size: 1.6rem;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .tile-wrap.BLACK { color: black; }
 .tile-wrap.RED { color: red; }
 .tile-wrap.GREEN { color: green; }
 .tile-wrap.BLUE { color: blue; }
+
+.tile-wrap.BLACK:hover, 
+.tile-wrap.RED:hover,
+.tile-wrap.GREEN:hover,  
+.tile-wrap.BLUE:hover {
+  cursor: grab;
+  background: lightgrey;
+}
 
 
 /* RACK */

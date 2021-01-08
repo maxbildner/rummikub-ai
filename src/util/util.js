@@ -37,7 +37,6 @@ export function selectRandomTilesFromPouch(pouch, numTiles) {
 }
 
 
-
 // DEEP COPY 2D ARRAY
 // [ [null, null], [1, 2] ] => [ [null, null], [1, 2] ]
 export function deepCopy2DArr(arr) {
@@ -48,4 +47,40 @@ export function deepCopy2DArr(arr) {
   });
 
   return newArr;
+}
+
+
+
+// MOVES TILE FROM DRAGGED TO DROPPED
+// returns new 2d array rack of tiles
+// draggedTile == { row: 0, col: 0, tileId: 32 }
+// droppedTile == { row: 1, col: 2, tileId: 1 }
+export function moveTileOnRack(oldPlayerRack, draggedTile, droppedTile) {
+
+  let newPlayerRack = deepCopy2DArr(oldPlayerRack);
+
+  let isDroppedLocationEmpty = droppedTile.tileId === null;
+
+  if (isDroppedLocationEmpty) {
+    
+    // update dropped tile location w/ dragged tile id
+    newPlayerRack[droppedTile.row][droppedTile.col] = draggedTile.tileId;
+
+    // dropping on location w/ tile, so move tiles
+  } else {
+
+    // grab tiles from dropped location to end of row (null)
+    let tilesToShift = oldPlayerRack[droppedTile.row].slice(droppedTile.col);
+    
+
+
+
+
+  }
+
+
+  // update dragged tile location empty
+  newPlayerRack[draggedTile.row][draggedTile.col] = null;
+
+  return newPlayerRack;
 }
